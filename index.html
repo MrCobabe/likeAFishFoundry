@@ -1,0 +1,350 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111311">
+  <meta name="description" content="Shop bronze D&D miniatures and metal tabletop miniatures from Like a Fish Foundry. Explore bronze statues or request a custom casting quote using your STL design.">
+  <title>Like a Fish Foundry | Bronze D&D Miniatures & Custom Casting</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    :root{--bg:#111311;--panel:#1a1d1a;--panel2:#202420;--ink:#f2eee5;--muted:#b8b9af;--copper:#c88754;--gold:#e1b77b;--line:#383c35;--green:#8c9b76}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit}
+    .wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topbar{border-bottom:1px solid var(--line);background:#0d0f0d}
+    .topbar-inner{min-height:42px;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--muted);font-size:.8rem}
+    .topbar a{text-decoration:none;color:var(--gold)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 0}
+    .brand{display:flex;align-items:center;gap:13px;text-decoration:none;min-width:0}
+    .brand-mark{display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--copper);border-radius:50%;color:var(--gold);font-size:1.45rem;background:radial-gradient(circle,#33251b,#141614 72%);flex:none}
+    .brand-name{font-family:Georgia,serif;font-weight:700;font-size:clamp(1.1rem,2.8vw,1.65rem);letter-spacing:.02em;line-height:1.15}
+    .brand-tag{font-size:.72rem;color:var(--muted);letter-spacing:.17em;text-transform:uppercase;margin-top:4px}
+    .nav-links{display:flex;align-items:center;gap:24px}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:.92rem}
+    .nav-links a:hover{color:var(--gold)}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;border:1px solid var(--copper);background:var(--copper);color:#17130f;text-decoration:none;font-weight:750;padding:12px 18px;border-radius:5px;transition:.2s}
+    .btn:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-1px)}
+    .btn.outline{background:transparent;color:var(--ink);border-color:#69614f}
+    .btn.outline:hover{border-color:var(--gold);color:var(--gold)}
+    .hero{position:relative;overflow:hidden;padding:clamp(58px,9vw,112px) 0 78px;border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 82% 35%,rgba(200,135,84,.16),transparent 35%),linear-gradient(135deg,#191c18,#101210 60%)}
+    .hero:after{content:"";position:absolute;width:430px;height:430px;border:1px solid rgba(225,183,123,.14);border-radius:50%;right:-120px;top:-90px;box-shadow:0 0 0 28px rgba(225,183,123,.025),0 0 0 58px rgba(225,183,123,.02);pointer-events:none}
+    .eyebrow{color:var(--gold);font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.22em}
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.12}
+    h1{font-size:clamp(2.8rem,7vw,5.4rem);max-width:760px;margin:17px 0 20px;letter-spacing:-.035em}
+    h1 em{color:var(--gold);font-weight:400}
+    .hero p{max-width:620px;color:var(--muted);font-size:1.12rem;margin:0 0 28px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .hero-note{margin-top:32px;color:#8f9389;font-size:.82rem}
+    .hero-note span{color:var(--copper);padding:0 8px}
+    .section{padding:70px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px}
+    .section-head h2{font-size:clamp(2rem,4vw,3rem);margin:8px 0 0}
+    .section-head p{color:var(--muted);max-width:430px;margin:0}
+    .category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .category{min-height:190px;display:flex;flex-direction:column;justify-content:space-between;padding:25px;background:linear-gradient(145deg,#24251f,#171a17);border:1px solid var(--line);border-radius:8px;text-decoration:none;transition:.2s}
+    .category:hover{border-color:var(--copper);transform:translateY(-3px)}
+    .category-icon{font-size:1.9rem;color:var(--gold)}
+    .category h3{font-size:1.45rem;margin:18px 0 6px}
+    .category p{margin:0;color:var(--muted);font-size:.92rem}
+    .category .arrow{color:var(--copper);font-size:1.3rem;align-self:flex-end}
+    .shop-section{background:#151815;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .shop-tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:22px 0 28px}
+    .search{flex:1;min-width:210px;position:relative}
+    .search input{width:100%;padding:13px 15px;border-radius:5px;background:#0f110f;border:1px solid #45493f;color:var(--ink);font:inherit;outline:none}
+    .search input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(225,183,123,.12)}
+    .filter{padding:12px 36px 12px 13px;border-radius:5px;background:#0f110f;border:1px solid #45493f;color:var(--ink);font:inherit;max-width:100%}
+    .product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .product{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+    .product-image{aspect-ratio:4/3;background:radial-gradient(ellipse at 50% 40%,#39352b,#191c19 72%);display:grid;place-items:center;overflow:hidden;color:#a8a08c}
+    .product-image img{width:100%;height:100%;object-fit:cover;display:block}
+    .product-placeholder{text-align:center;padding:20px}
+    .product-placeholder .sigil{font-size:2.5rem;color:var(--gold);display:block;margin-bottom:7px}
+    .product-placeholder small{display:block;color:#96988d;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}
+    .product-body{padding:18px;display:flex;flex-direction:column;flex:1}
+    .product-category{font-size:.7rem;color:var(--gold);text-transform:uppercase;letter-spacing:.13em;font-weight:800}
+    .product h3{font-size:1.3rem;margin:8px 0}
+    .product p{color:var(--muted);font-size:.9rem;margin:0 0 17px}
+    .product-bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .price{font-size:1.18rem;font-weight:800;color:var(--gold)}
+    .product-bottom .btn{font-size:.82rem;padding:9px 12px;white-space:nowrap}
+    .empty{grid-column:1/-1;padding:35px 22px;text-align:center;border:1px dashed #535447;border-radius:8px;background:#191c19}
+    .empty h3{font-size:1.5rem;margin:0 0 8px}
+    .empty p{color:var(--muted);max-width:560px;margin:0 auto 18px}
+    .empty code{color:var(--gold)}
+    .craft{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+    .craft-art{min-height:300px;border:1px solid #484235;border-radius:8px;background:radial-gradient(ellipse at center,rgba(200,135,84,.18),transparent 60%),linear-gradient(135deg,#29271f,#151815);display:grid;place-items:center;text-align:center;padding:35px}
+    .craft-art .emblem{font-size:5rem;color:var(--gold);line-height:1}
+    .craft-art strong{display:block;font-family:Georgia,serif;font-size:1.5rem;margin-top:18px}
+    .craft-art small{color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+    .craft-copy h2{font-size:clamp(2rem,4vw,3rem);margin:12px 0 18px}
+    .craft-copy p{color:var(--muted)}
+    .upload-panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:26px}
+    .upload-panel h3{font-size:1.65rem;margin:10px 0}
+    .upload-panel>p{color:var(--muted);font-size:.9rem;margin:0 0 20px}
+    .form-field{margin-bottom:16px}
+    .form-field label{display:block;font-size:.88rem;font-weight:700;margin-bottom:6px}
+    .form-field input,.form-field textarea,.form-field select{display:block;width:100%;padding:12px;background:#101310;color:var(--ink);border:1px solid #45493f;border-radius:5px;font:inherit}
+    .form-field input:focus,.form-field textarea:focus,.form-field select:focus{outline:2px solid var(--gold);outline-offset:1px}
+    .file-help{display:block;color:var(--muted);font-size:.78rem;margin-top:6px}
+    #quote-status{margin-top:14px;color:var(--gold);font-size:.88rem}
+    .craft-list{list-style:none;padding:0;margin:24px 0}
+    .craft-list li{padding:10px 0;border-bottom:1px solid var(--line);color:#dedbd1}
+    .craft-list li:before{content:"✦";color:var(--copper);margin-right:12px}
+    .cta{padding:50px 0;background:linear-gradient(100deg,#33271d,#1c201a);border-bottom:1px solid var(--line)}
+    .cta-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .cta h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 8px}
+    .cta p{color:#c7c1b4;margin:0}
+    footer{padding:32px 0;color:#93968c;font-size:.85rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    footer a{color:var(--gold);text-decoration:none}
+    .hidden{display:none!important}
+    @media(max-width:800px){.nav{align-items:flex-start;flex-wrap:wrap}.nav-links{gap:12px;flex-wrap:wrap;justify-content:flex-end}.nav-links .nav-extra{display:inline}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.category-grid{grid-template-columns:1fr}.category{min-height:145px}.craft{grid-template-columns:1fr;gap:28px}.craft-art{min-height:230px}.section-head{align-items:start;flex-direction:column}.cta-inner{align-items:flex-start;flex-direction:column}}
+    @media(max-width:520px){.wrap{width:min(100% - 28px,1160px)}.topbar-inner{font-size:.72rem}.nav{padding:16px 0}.brand-mark{width:40px;height:40px}.brand-tag{font-size:.6rem}.nav-links{width:100%;justify-content:flex-start;gap:10px 16px}.nav-links a{font-size:.8rem}.nav-links .btn{padding:9px 11px;font-size:.8rem}.hero{padding:58px 0 62px}.hero p{font-size:1rem}.product-grid{grid-template-columns:1fr}.product-image{aspect-ratio:5/3}.section{padding:52px 0}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <span>Small-batch creations • Made for collectors & adventurers</span>
+      <a href="https://ebay.us/m/ytdVYb" target="_blank" rel="noopener noreferrer">Visit our eBay store ↗</a>
+    </div>
+  </div>
+  <header class="wrap nav">
+    <a class="brand" href="#" aria-label="Like a Fish Foundry home">
+      <span class="brand-mark" aria-hidden="true">⚒</span>
+      <span><span class="brand-name">Like a Fish Foundry</span><span class="brand-tag">Bronze • Cast • Crafted</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#miniatures">Bronze Miniatures</a>
+      <a href="#custom-casting">Custom Casting</a>
+      <a href="#statues">Bronze Statues</a>
+      <a class="nav-extra" href="#about">About</a>
+      <a class="btn" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Welcome to the foundry</div>
+        <h1>Bronze miniatures.<br><em>Crafted with character.</em></h1>
+        <p>Explore bronze D&amp;D miniatures and metal tabletop collectibles, discover bronze statues, or bring your own design to life with a custom casting request.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#miniatures">Shop Bronze Miniatures ↓</a>
+          <a class="btn outline" href="#custom-casting">Upload an STL for a Quote ↗</a>
+        </div>
+        <div class="hero-note">D&amp;D metal miniatures <span>✦</span> Bronze statues <span>✦</span> Custom STL casting</div>
+      </div>
+    </section>
+
+    <section class="section" id="collections">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Three ways to explore</div><h2>Find Your Next Favorite</h2></div>
+          <p>Shop our bronze miniature listings, explore statues and sculptures, or tell us about a custom design you'd like cast.</p>
+        </div>
+        <div class="category-grid">
+          <a class="category" href="#miniatures">
+            <div><div class="category-icon" aria-hidden="true">♜</div><h3>Bronze Miniatures</h3><p>Browse bronze D&amp;D miniatures and metal tabletop collectibles.</p></div><span class="arrow">↗</span>
+          </a>
+          <a class="category" href="#custom-casting">
+            <div><div class="category-icon" aria-hidden="true">⚒</div><h3>Custom Casting</h3><p>Upload an STL, request a quote, or start a conversation about your idea.</p></div><span class="arrow">↗</span>
+          </a>
+          <a class="category" href="#statues">
+            <div><div class="category-icon" aria-hidden="true">◈</div><h3>Bronze Statues</h3><p>Discover small bronze statues and sculptural display pieces.</p></div><span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shop-section" id="miniatures">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">D&amp;D and tabletop collectibles</div><h2>Bronze Miniatures</h2></div>
+          <p>Browse our bronze D&amp;D miniatures and metal tabletop miniatures. Listings, prices, photos, and eBay purchase links will be synchronized here when the store integration is connected.</p>
+        </div>
+        <div class="shop-tools">
+          <label class="search"><input id="search" type="search" placeholder="Search bronze miniatures…" aria-label="Search products"></label>
+          <select id="category-filter" class="filter" aria-label="Filter by category">
+            <option value="">All miniatures</option>
+            <option value="DnD bronze miniatures">D&amp;D Bronze Miniatures</option>
+          </select>
+        </div>
+        <div id="product-grid" class="product-grid" aria-live="polite">
+          <div class="empty"><h3>Stocking the shelves</h3><p>Your bronze miniature listings will appear here when the eBay synchronization is connected. In the meantime, browse the current listings in our eBay store.</p><a class="btn" href="https://ebay.us/m/ytdVYb" target="_blank" rel="noopener noreferrer">Browse current listings ↗</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="custom-casting">
+      <div class="wrap craft">
+        <div class="craft-copy">
+          <div class="eyebrow">Your design, your idea</div>
+          <h2>Custom Casting</h2>
+          <p>Have an STL you'd like to explore casting? Send us your file and project details to request a quote or start a conversation. Every design is different, so we'll review the details and discuss options with you.</p>
+          <ul class="craft-list">
+            <li>Share your STL file and project details</li>
+            <li>Tell us the size and quantity you're considering</li>
+            <li>We'll review the request and discuss possible next steps</li>
+          </ul>
+          <p><small>Only upload designs you own or have permission to reproduce.</small></p>
+        </div>
+        <form class="upload-panel" id="quote-form">
+          <div class="eyebrow">Start a project</div>
+          <h3>Request a Casting Quote</h3>
+          <p>This form is a front-end prototype. Secure file upload and message delivery will be connected before the site goes live.</p>
+          <div class="form-field">
+            <label for="quote-name">Name *</label>
+            <input id="quote-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="form-field">
+            <label for="quote-email">Email *</label>
+            <input id="quote-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="form-field">
+            <label for="quote-file">STL file</label>
+            <input id="quote-file" name="stl" type="file" accept=".stl,model/stl">
+            <small class="file-help">STL files only. Upload is not active until secure storage is connected.</small>
+          </div>
+          <div class="form-field">
+            <label for="quote-quantity">Estimated quantity</label>
+            <select id="quote-quantity" name="quantity">
+              <option value="unsure">Not sure yet</option>
+              <option value="1">1 piece</option>
+              <option value="2-5">2–5 pieces</option>
+              <option value="6-20">6–20 pieces</option>
+              <option value="20+">More than 20 pieces</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="quote-message">Tell us about your project *</label>
+            <textarea id="quote-message" name="message" rows="4" placeholder="Dimensions, intended use, quantity, or questions…" required></textarea>
+          </div>
+          <button class="btn" type="submit">Prepare Quote Request ↗</button>
+          <p id="quote-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section shop-section" id="statues">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Sculptural pieces for display</div><h2>Bronze Statues</h2></div>
+          <p>Explore small bronze statues and collectible sculptures. We'll feature available pieces here as the statue catalog is added.</p>
+        </div>
+        <div class="category-grid">
+          <article class="category">
+            <div><div class="category-icon" aria-hidden="true">◈</div><h3>Small Bronze Statues</h3><p>Compact sculptural pieces for shelves, desks, and collections.</p></div>
+            <a class="arrow" href="https://ebay.us/m/ytdVYb" target="_blank" rel="noopener noreferrer" aria-label="Browse bronze statues on eBay">↗</a>
+          </article>
+          <article class="category">
+            <div><div class="category-icon" aria-hidden="true">✦</div><h3>Collectible Sculptures</h3><p>Discover distinctive forms and subjects in bronze.</p></div>
+            <a class="arrow" href="https://ebay.us/m/ytdVYb" target="_blank" rel="noopener noreferrer" aria-label="Browse collectible sculptures on eBay">↗</a>
+          </article>
+          <article class="category">
+            <div><div class="category-icon" aria-hidden="true">⚒</div><h3>Looking for Something Specific?</h3><p>Ask us about a piece or start a custom casting conversation.</p></div>
+            <a class="arrow" href="#contact" aria-label="Contact Like a Fish Foundry">↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap craft">
+        <div class="craft-art" aria-label="Foundry-inspired decorative artwork">
+          <div><div class="emblem" aria-hidden="true">⚒</div><strong>Like a Fish Foundry</strong><small>Made with imagination</small></div>
+        </div>
+        <div class="craft-copy">
+          <div class="eyebrow">A little about the foundry</div>
+          <h2>Craft for the curious.</h2>
+          <p>Whether you're building a campaign, collecting small sculptures, or bringing a custom idea to life, Like a Fish Foundry is about pieces with personality.</p>
+          <ul class="craft-list">
+            <li>Tabletop miniatures with character</li>
+            <li>Small bronze statues for display</li>
+            <li>Custom-cast projects and special requests</li>
+          </ul>
+          <a class="btn outline" href="https://ebay.us/m/ytdVYb" target="_blank" rel="noopener noreferrer">See our eBay store ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="wrap cta-inner">
+        <div><h2>Have a question or a custom idea?</h2><p>Browse current listings on eBay or reach out to discuss a custom casting project.</p></div>
+        <div class="hero-actions">
+          <a class="btn" href="https://ebay.us/m/ytdVYb" target="_blank" rel="noopener noreferrer">Visit Our eBay Store ↗</a>
+          <a class="btn outline" href="#custom-casting">Start a Custom Project ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Like a Fish Foundry</span>
+      <span>Purchases and checkout are handled on <a href="https://ebay.us/m/ytdVYb" target="_blank" rel="noopener noreferrer">eBay</a>.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Product data is kept separate so you can update listings without editing the page layout.
+    // Add real listings to products.js using the example format in that file.
+    const EBayStoreUrl = "https://ebay.us/m/ytdVYb";
+    const grid = document.getElementById("product-grid");
+    const searchInput = document.getElementById("search");
+    const categoryFilter = document.getElementById("category-filter");
+    document.getElementById("year").textContent = new Date().getFullYear();
+    let products = Array.isArray(window.FOUNDRY_PRODUCTS) ? window.FOUNDRY_PRODUCTS : [];
+
+    function safeUrl(value) {
+      try {
+        const u = new URL(value, window.location.href);
+        return (u.protocol === "https:" && (u.hostname === "ebay.com" || u.hostname.endsWith(".ebay.com") || u.hostname === "ebay.us")) ? u.href : EBayStoreUrl;
+      } catch { return EBayStoreUrl; }
+    }
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+    }
+    function render() {
+      const query = searchInput.value.trim().toLowerCase();
+      const category = categoryFilter.value;
+      const visible = products.filter(p => {
+        const productCategory = String(p.category || "").toLowerCase();
+        const isMiniature = !productCategory || productCategory.includes("miniature") || productCategory.includes("d&d") || productCategory.includes("dnd");
+        const text = [p.title,p.description,p.category].join(" ").toLowerCase();
+        return isMiniature && (!query || text.includes(query)) && (!category || p.category === category);
+      });
+      if (!visible.length) {
+        const message = products.length
+          ? "No items match that search. Try another phrase or select a different collection."
+          : "Your product cards will appear here once listing data is added. For now, browse all current items in the Like a Fish Foundry eBay store.";
+        grid.innerHTML = `<div class="empty"><h3>${products.length ? "No matches found" : "Stocking the shelves"}</h3><p>${message}</p><a class="btn" href="${EBayStoreUrl}" target="_blank" rel="noopener noreferrer">Browse current listings ↗</a></div>`;
+        return;
+      }
+      grid.innerHTML = visible.map(p => {
+        const image = p.image ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" loading="lazy">` : `<div class="product-placeholder"><span class="sigil" aria-hidden="true">✧</span><small>Like a Fish Foundry</small></div>`;
+        const price = p.price ? `<span class="price">${escapeHtml(p.price)}</span>` : `<span class="price">View on eBay</span>`;
+        return `<article class="product"><div class="product-image">${image}</div><div class="product-body"><span class="product-category">${escapeHtml(p.category || "Foundry item")}</span><h3>${escapeHtml(p.title || "Foundry creation")}</h3><p>${escapeHtml(p.description || "")}</p><div class="product-bottom">${price}<a class="btn" href="${safeUrl(p.url)}" target="_blank" rel="noopener noreferrer">View item ↗</a></div></div></article>`;
+      }).join("");
+    }
+    searchInput.addEventListener("input", render);
+    categoryFilter.addEventListener("change", render);
+
+    // The quote form is only a prototype until a secure backend is connected.
+    document.getElementById("quote-form").addEventListener("submit", event => {
+      event.preventDefault();
+      document.getElementById("quote-status").textContent =
+        "Thanks! The form is ready for backend integration, but your request has not been sent yet.";
+    });
+    const dataScript = document.createElement("script");
+    dataScript.src = "products.js";
+    dataScript.onload = () => { products = Array.isArray(window.FOUNDRY_PRODUCTS) ? window.FOUNDRY_PRODUCTS : []; render(); };
+    dataScript.onerror = () => render();
+    document.body.appendChild(dataScript);
+    render();
+  </script>
+</body>
+</html>
